@@ -3,7 +3,17 @@
  *  (1 балл)
  */
 fun replaceElements(array: List<String>): List<String> {
-    return listOfNotNull()
+    val cnt = mutableSetOf<String>()
+    val result = mutableListOf<String>()
+    for (element in array) {
+        if (cnt.contains(element)) {
+            result.add("blahblah")
+        } else {
+            result.add(element)
+            cnt.add(element)
+        }
+    }
+    return result
 }
 
 
@@ -13,15 +23,20 @@ fun replaceElements(array: List<String>): List<String> {
  *  (1 балл)
  */
 fun uniqueWords(text: String): Int {
-    return 0
+    val words = text.split(" ")
+    val uniqueWords = mutableSetOf<String>()
+    for (word in words) {
+        uniqueWords.add(word)
+    }
+    return uniqueWords.size
 }
 
 // Используйте эту функцию для запуска кода
 // Раскомментируйте нужные участки в процессе реализации
 fun main() {
-    //val text = ""
-    //println(uniqueWords(text))
+//    val text = "435 4 4 4"
+//    println(uniqueWords(text))
 
     // Вызвать для text и вывести результат замены на экран
-    //replaceElements()
+//    replaceElements()
 }

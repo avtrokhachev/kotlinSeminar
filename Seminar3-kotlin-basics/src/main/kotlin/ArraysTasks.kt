@@ -1,3 +1,4 @@
+import java.util.*
 
 /**
     Задание 1: Сформировать целочисленный массив A из N элементов
@@ -5,7 +6,19 @@
     Вывести массив на экран. (1 балл)
  */
 fun makeArray(): Array<Int> {
-    return arrayOf()
+    print("Введите количество элементов массива N: ")
+    val n = readLine()?.toIntOrNull() ?: 0
+
+    val array = Array(n) { 0 }
+    println("Введите значения элементов массива:")
+    for (i in array.indices) {
+        array[i] = readLine()?.toIntOrNull() ?: 0
+    }
+    for (element in array) {
+        print("$element ")
+    }
+    println()
+    return array
 }
 
 /**
@@ -13,14 +26,18 @@ fun makeArray(): Array<Int> {
     Использовать встроенные функции. (0.5 балла)
  */
 fun sortArrayDesc(arr: Array<Int>) {
-
+    arr.sortDescending()
+    for (element in arr) {
+        print("$element ")
+    }
+    println()
 }
 
 // Используйте эту функцию для запуска кода
 // Раскомментируйте нужные участки в процессе реализации
 fun main() {
 //    val arr = makeArray()
-//
+
 //    sortArrayDesc(arr)
 }
 
